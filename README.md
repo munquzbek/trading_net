@@ -118,6 +118,18 @@ http://127.0.0.1:8000/users/signup/
 use this url to sign up in project
 
 ```url
+http://127.0.0.1:8000/users/token/
+```
+
+use this to get token to being authenticated if using Postman
+
+```url
+http://127.0.0.1:8000/users/token/refresh/
+```
+
+use this to refresh token
+
+```url
 http://127.0.0.1:8000/users/list/
 ```
 
