@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -35,12 +34,18 @@ class Migration(migrations.Migration):
                 ('city', models.CharField(max_length=100, verbose_name='City')),
                 ('street', models.CharField(max_length=100, verbose_name='Street')),
                 ('house_number', models.CharField(max_length=10, verbose_name='House number')),
-                ('debt_to_supplier', models.DecimalField(decimal_places=2, default=0.0, max_digits=10, verbose_name='Debt for supplier')),
+                ('debt_to_supplier',
+                 models.DecimalField(decimal_places=2, default=0.0, max_digits=10, verbose_name='Debt for supplier')),
                 ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Create Time')),
                 ('level', models.PositiveIntegerField(default=0, verbose_name='Hierarchy Level')),
-                ('type', models.CharField(choices=[('F', 'Factory'), ('R', 'Retail Network'), ('I', 'Individual Entrepreneur')], default='F', max_length=1, verbose_name='Network Type')),
-                ('supplier', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='supplied_by', to='network.network', verbose_name='Supplier')),
-                ('products', models.ManyToManyField(blank=True, related_name='networks', to='network.product', verbose_name='Products')),
+                ('type',
+                 models.CharField(choices=[('F', 'Factory'), ('R', 'Retail Network'), ('I', 'Individual Entrepreneur')],
+                                  default='F', max_length=1, verbose_name='Network Type')),
+                ('supplier', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE,
+                                               related_name='supplied_by', to='network.network',
+                                               verbose_name='Supplier')),
+                ('products', models.ManyToManyField(blank=True, related_name='networks', to='network.product',
+                                                    verbose_name='Products')),
             ],
             options={
                 'verbose_name': 'Network',

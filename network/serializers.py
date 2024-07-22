@@ -5,6 +5,7 @@ from network.models import Product, Network
 
 class ProductSerializer(serializers.ModelSerializer):
     """Serializer for Product model"""
+
     class Meta:
         model = Product
         fields = '__all__'
@@ -12,6 +13,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
 class NetworkSerializer(serializers.ModelSerializer):
     """Serializer for Network model"""
+
     class Meta:
         model = Network
         fields = '__all__'

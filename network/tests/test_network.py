@@ -107,4 +107,3 @@ def test_delete_network_as_active_user(api_client, user, network):
     api_client.force_authenticate(user=user)
     response = api_client.delete(f'/network/{network.id}/')
     assert response.status_code == status.HTTP_204_NO_CONTENT
-

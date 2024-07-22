@@ -32,4 +32,3 @@ class NetworkViewSet(viewsets.ModelViewSet):
         if obj.id != self.request.user.network.id:
             raise PermissionDenied("You do not have permission to access this network.")
         return obj
-

@@ -122,4 +122,3 @@ def test_delete_product_as_inactive_user(api_client, inactive_user, product):
     api_client.force_authenticate(user=inactive_user)
     response = api_client.delete(f'/product/{product.id}/')
     assert response.status_code == status.HTTP_403_FORBIDDEN
-
