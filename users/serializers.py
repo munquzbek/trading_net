@@ -14,4 +14,7 @@ class UserCreateSerializer(ModelSerializer):
     """Serializer for creating View of User, can use only email and password"""
     class Meta:
         model = User
-        fields = ('email', 'password',)
+        fields = ['email', 'password']
+        extra_kwargs = {
+            'password': {'write_only': True}  # password only for writing
+        }
