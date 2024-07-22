@@ -7,6 +7,7 @@ from network.models import Product, Network
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
+    """Product model settings in admin panel"""
     list_display = ('name', 'model', 'release_date')
     search_fields = ('name', 'model')
     ordering = ('name',)
@@ -15,6 +16,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Network)
 class NetworkAdmin(admin.ModelAdmin):
+    """Network model settings in admin panel"""
     list_display = (
         'name', 'email', 'country', 'city', 'type', 'level', 'debt_to_supplier', 'created_at', 'supplier_link')
     list_filter = ('city', 'type', 'level')
