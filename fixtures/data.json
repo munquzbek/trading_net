@@ -31,7 +31,7 @@
     "pk": 1,
     "fields": {
       "name": "Factory #1",
-      "email": "test@test.test",
+      "email": "test@test.kg",
       "country": "Kyrgyzstan",
       "city": "Bishkek",
       "street": "Street",
@@ -51,7 +51,7 @@
     "pk": 2,
     "fields": {
       "name": "Retail#1",
-      "email": "test@test.test",
+      "email": "test@test.ru",
       "country": "Russia",
       "city": "Moscow",
       "street": "Street",
@@ -72,7 +72,7 @@
     "pk": 3,
     "fields": {
       "name": "Individual#1",
-      "email": "test@test.test",
+      "email": "test@test.com",
       "country": "USA",
       "city": "Charlotte",
       "street": "street",
@@ -119,7 +119,7 @@
       "is_staff": false,
       "is_active": true,
       "date_joined": "2024-07-22T10:33:04Z",
-      "email": "test@test.com",
+      "email": "test@test.test",
       "network": 2,
       "groups": [],
       "user_permissions": []

@@ -10,5 +10,4 @@ router.register(r'product', ProductViewSet, basename='product')
 router.register(r'network', NetworkViewSet, basename='network')
 
 urlpatterns = [
-
 ] + router.urls

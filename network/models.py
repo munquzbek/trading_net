@@ -25,7 +25,7 @@ class Network(models.Model):
 
     name = models.CharField(max_length=100, verbose_name='Network name')
 
-    email = models.EmailField(verbose_name='Email')
+    email = models.EmailField(verbose_name='Email', unique=True)
     country = models.CharField(max_length=100, verbose_name='Country')
     city = models.CharField(max_length=100, verbose_name='City')
     street = models.CharField(max_length=100, verbose_name='Street')
