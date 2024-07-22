@@ -35,7 +35,7 @@ class Network(models.Model):
     debt_to_supplier = models.DecimalField(max_digits=10, decimal_places=2, default=0.00,
                                            verbose_name='Debt for supplier')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Create Time')
-    level = models.PositiveIntegerField(default=0, verbose_name='Hierarchy Level')
+    level = models.PositiveIntegerField(default=0, verbose_name='Hierarchy Level', editable=False)
     type = models.CharField(max_length=1, choices=TYPE_CHOICES, default='F', verbose_name='Network Type')
 
     def __str__(self):
@@ -52,9 +52,14 @@ class Network(models.Model):
         if self.debt_to_supplier < 0:
             raise ValueError("Debt cannot be negative.")
 
-        # Ensure that 'type' is valid
+        # ensure that 'type' is valid
         if self.type not in dict(self.TYPE_CHOICES).keys():
             raise ValueError("Invalid network type.")
+
+        # if network has no supplier then it will not have any debt
+        if self.debt_to_supplier and self.supplier is None:
+            raise ValueError("If no supplier, then no debt")
+
         super().save(*args, **kwargs)
 
     class Meta:

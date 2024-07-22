@@ -1,0 +1,92 @@
+[
+  {
+    "model": "network.product",
+    "pk": 1,
+    "fields": {
+      "name": "Product#1",
+      "model": "Model#1",
+      "release_date": "2024-07-22"
+    }
+  },
+  {
+    "model": "network.product",
+    "pk": 2,
+    "fields": {
+      "name": "Product#2",
+      "model": "Model#2",
+      "release_date": "2024-07-22"
+    }
+  },
+  {
+    "model": "network.product",
+    "pk": 3,
+    "fields": {
+      "name": "Product#3",
+      "model": "Model#3",
+      "release_date": "2024-07-22"
+    }
+  },
+  {
+    "model": "network.network",
+    "pk": 1,
+    "fields": {
+      "name": "Factory #1",
+      "email": "test@test.test",
+      "country": "Kyrgyzstan",
+      "city": "Bishkek",
+      "street": "Street",
+      "house_number": "1",
+      "supplier": null,
+      "debt_to_supplier": "0.00",
+      "created_at": "2024-07-22T01:13:57.801Z",
+      "level": 0,
+      "type": "F",
+      "products": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "network.network",
+    "pk": 2,
+    "fields": {
+      "name": "Retail#1",
+      "email": "test@test.test",
+      "country": "Russia",
+      "city": "Moscow",
+      "street": "Street",
+      "house_number": "1",
+      "supplier": 1,
+      "debt_to_supplier": "10000.00",
+      "created_at": "2024-07-22T01:15:12.973Z",
+      "level": 1,
+      "type": "R",
+      "products": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "network.network",
+    "pk": 3,
+    "fields": {
+      "name": "Individual#1",
+      "email": "test@test.test",
+      "country": "USA",
+      "city": "Charlotte",
+      "street": "street",
+      "house_number": "1",
+      "supplier": 2,
+      "debt_to_supplier": "3.33",
+      "created_at": "2024-07-22T01:21:10.320Z",
+      "level": 2,
+      "type": "I",
+      "products": [
+        1,
+        2,
+        3
+      ]
+    }
+  }
+]

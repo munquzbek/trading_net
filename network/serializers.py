@@ -13,3 +13,9 @@ class NetworkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Network
         fields = '__all__'
+
+    # changing debt is prohibited
+    def validate(self, data):
+        if 'debt_to_supplier' in data:
+            raise serializers.ValidationError({'debt_to_supplier': 'Debt cannot be updated.'})
+        return data
