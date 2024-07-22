@@ -18,7 +18,8 @@ other elements of the network, i.e. the plant is always at level 0, and if the r
 plant, bypassing other links, its level is 1.
 
 Example: Factory #1 -> Retail Network #1 -> Retail Network #2 -> Individual Entrepreneur #1
-so, Factory#1 level=0, Retail Network #1 level=1, Retail Network #2 level=2, Individual Entrepreneur #1 level=3
+
+So, Factory#1 level=0, Retail Network #1 level=1, Retail Network #2 level=2, Individual Entrepreneur #1 level=3
 
 Remark: Factory always has 0 level
 
@@ -48,6 +49,13 @@ Install the dependencies:
 
 ```bash
 pip install requirements.txt
+```
+
+Do migrations:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 Create a superuser:
@@ -158,3 +166,4 @@ http://127.0.0.1:8000/redoc/
 use these two links to see documentations
 
 ## Thanks
+Project secured with CORS and you can set in config/settings.py
